@@ -1,0 +1,11 @@
+<input type="text" [(ngModel)]="userId">
+<input type="password" [(ngModel)]="password">
+
+<p>
+  {{userId}} : {{password}}
+</p>
+
+<a class="btn" (click)="testData()">Test Data</a>
+
+<app-home (toggle)="onToggle($event)"></app-home>
+
