@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrivateZoneComponent } from './private-zone.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PrivateZoneComponent', () => {
   let component: PrivateZoneComponent;
@@ -8,7 +9,10 @@ describe('PrivateZoneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrivateZoneComponent ]
+      declarations: [ PrivateZoneComponent ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
     })
     .compileComponents();
   }));
