@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,11 @@ import { PrivateZoneComponent } from './private-zone/private-zone.component';
 import { LoginComponent } from './login/login.component';
 import { DemoListComponent } from './demo-list/demo-list.component';
 import { DemoFormComponent } from './demo-form/demo-form.component';
+import { ServicenameService } from './shared/service/servicename.service';
+
+import { AngularFireModule } from 'angularfire2'
+import { environment } from '../environments/environment'
+import { AngularFireAuthModule } from 'angularfire2/auth'
 
 @NgModule({
   declarations: [
@@ -28,10 +34,12 @@ import { DemoFormComponent } from './demo-form/demo-form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-   // MaterializeModule
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [ServicenameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
