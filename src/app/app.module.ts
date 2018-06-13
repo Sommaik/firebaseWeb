@@ -19,6 +19,12 @@ import { ServicenameService } from './shared/service/servicename.service';
 import { AngularFireModule } from 'angularfire2'
 import { environment } from '../environments/environment'
 import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { DemoDbFormComponent } from './demo-db-form/demo-db-form.component';
+import { DemoDbListComponent } from './demo-db-list/demo-db-list.component'
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { DemoUploadComponent } from './demo-upload/demo-upload.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +35,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
     PrivateZoneComponent,
     LoginComponent,
     DemoListComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    DemoDbFormComponent,
+    DemoDbListComponent,
+    DemoUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth'
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [ServicenameService],
   bootstrap: [AppComponent]

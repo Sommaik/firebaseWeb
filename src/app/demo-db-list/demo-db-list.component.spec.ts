@@ -1,33 +1,32 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DemoListComponent } from './demo-list.component';
+import { DemoDbListComponent } from './demo-db-list.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../environments/environment';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-describe('DemoListComponent', () => {
-  let component: DemoListComponent;
-  let fixture: ComponentFixture<DemoListComponent>;
+describe('DemoDbListComponent', () => {
+  let component: DemoDbListComponent;
+  let fixture: ComponentFixture<DemoDbListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DemoListComponent ],
+      declarations: [ DemoDbListComponent ],
       imports: [
         FormsModule,
         AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
+        AngularFireDatabaseModule,
         RouterTestingModule.withRoutes([
 
-        ])
-      ]
+        ])]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DemoListComponent);
+    fixture = TestBed.createComponent(DemoDbListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
